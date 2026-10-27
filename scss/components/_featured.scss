@@ -1,0 +1,40 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.featured {
+  @include section-padding;
+
+  &__title {
+    margin-bottom: 24px;
+    font-size: 28px;
+
+    @include respond(md) {
+      font-size: 40px;
+    }
+  }
+
+  // GRID 1: en desktop = tarjeta grande | bloque de 4 chicas
+  &__grid {
+    display: grid;
+    gap: $gap;
+
+    @include respond(lg) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  // GRID 2 (anidado): las 4 tarjetas chicas en 2 columnas
+  &__small {
+    display: grid;
+    gap: $gap;
+
+    @include respond(md) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  // en el bloque chico las fotos son mas bajas
+  &__small .card__image {
+    height: 160px;
+  }
+}

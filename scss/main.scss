@@ -1,0 +1,12 @@
+// Archivo principal: solo importa los demas (partials)
+@use "base";
+
+@use "components/button";
+@use "components/nav";
+@use "components/masthead";
+@use "components/card";
+@use "components/featured";
+@use "components/resources";
+@use "components/tabs";
+@use "components/cta";
+@use "components/footer";

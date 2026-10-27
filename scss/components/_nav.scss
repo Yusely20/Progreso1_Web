@@ -1,0 +1,75 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.nav {
+  position: absolute;      // flota encima del masthead (como en el diseno)
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 16px;
+
+  @include respond(md) {
+    padding: 24px $margin;
+  }
+
+  // FLEXBOX: menu | logo | utilidades
+  &__bar {
+    display: flex ;
+    align-items: center;
+    justify-content: space-between;
+    height: 62px;
+    padding: 0 16px;
+    //color navbar
+    background: $blue;
+    color: $white;
+
+    @include respond(md) {
+      height: 72px;
+      padding: 0 24px;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    //row fila
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
+
+  &__menu-line {
+    width: 24px;
+    height: 2px;
+    background: $white;
+  }
+
+  &__logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: $white;
+    text-decoration: none;
+    //logo cambia de tamaño en desktop media query
+    /*@include respond(md) { 
+      font-size: 32px;
+    }*/
+  }
+
+  &__utility {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__link {
+    color: $white;
+    text-decoration: none;
+    font-size: 18px;
+
+    &:hover {
+      color: $green;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "resource-landing",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "sass": "sass scss/main.scss css/main.css --watch",
+    "build": "sass scss/main.scss css/main.css --no-source-map"
+  },
+  "devDependencies": {
+    "sass": "^1.80.0"
+  }
+}

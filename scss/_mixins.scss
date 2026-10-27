@@ -1,0 +1,27 @@
+@use "variables" as *;
+@use "sass:map";
+
+// MIXIN 1: media query (mobile first -> min-width)
+// Uso: @include respond(md) { ... }
+@mixin respond($size) {
+  @media (min-width: map.get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+// MIXIN 2: padding de las secciones
+// 16px a los lados en celular, 72px en tablet/desktop
+@mixin section-padding {
+  padding: 40px 16px;
+
+  @include respond(md) {
+    padding: $section-y $margin;
+  }
+}
+
+// MIXIN 3: estilos de un boton (cambia fondo, color y borde)
+@mixin button-variant($bg, $color, $border) {
+  background: $bg;
+  color: $color;
+  border: 2px solid $border;
+}

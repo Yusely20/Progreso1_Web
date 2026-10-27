@@ -1,0 +1,25 @@
+// ===== COLORES (sacados del Figma) =====
+$blue:        #003087;
+$blue-dark:   #001c4f;
+$blue-light:  #0775bd;
+$green:       #ff0066;
+$gray-10:     #f4f5f5;
+$slate-light: #eff1f3;
+$gray-30:     #b5bdc9;
+$gray-50:     #424f57;
+$black:       #1e1e1e;
+$white:       #ffffff;
+
+// ===== ESPACIADOS (variables spacing/ del Figma) =====
+$margin:    72px;  // margen lateral en desktop
+$gap:       24px;  // separacion entre tarjetas
+$section-y: 64px;  // espacio vertical de cada seccion
+
+// ===== TIPOGRAFIA =====
+$font-main: "Segoe UI", Arial, sans-serif;
+
+// ===== BREAKPOINTS =====
+$breakpoints: (
+  md: 768px,
+  lg: 1024px
+);

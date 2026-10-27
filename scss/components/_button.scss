@@ -1,0 +1,33 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+
+  &--light {
+    @include button-variant($white, $blue, $white);
+  }
+
+  &--outline {
+    @include button-variant(transparent, $blue, $blue);
+
+    &:hover {
+      background: $blue;
+      color: $white;
+    }
+  }
+
+  &--outline-light {
+    @include button-variant(transparent, $white, $white);
+
+    &:hover {
+      background: $white;
+      color: $blue;
+    }
+  }
+}

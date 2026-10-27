@@ -1,0 +1,103 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.tabs {
+  @include section-padding;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 40px;
+
+    @include respond(md) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  &__heading {
+    max-width: 856px;
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    font-size: 28px;
+
+    @include respond(md) {
+      font-size: 40px;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    color: $gray-50;
+  }
+
+  // GRID: lista de tabs (306px) | panel (resto)
+  &__columns {
+    display: grid;
+    gap: 40px;
+
+    @include respond(lg) {
+      grid-template-columns: 306px 1fr;
+    }
+  }
+
+  // FLEXBOX en columna: los tabs uno debajo del otro
+  &__items {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    border-left: 4px solid $gray-30;
+
+    &--active {
+      border-left-color: $blue;
+      background: $gray-10;
+
+      .tabs__label {
+        color: $black;
+        font-weight: 600;
+      }
+    }
+  }
+
+  &__label {
+    display: block;
+    padding: 20px 24px;
+    font-size: 18px;
+    color: $gray-50;
+    text-decoration: none;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+
+  &__panel-title {
+    margin-bottom: 8px;
+    font-size: 28px;
+  }
+
+  &__panel-text {
+    margin-bottom: 24px;
+    color: $gray-50;
+  }
+
+  &__cards {
+    display: grid;
+    gap: $gap;
+
+    @include respond(md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  // aqui las tarjetas llevan borde porque el fondo es blanco
+  &__cards .card {
+    border: 1px solid $gray-30;
+  }
+}
